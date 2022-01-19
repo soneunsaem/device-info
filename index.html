@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디바이스정보얻기.html</title>
+</head>
+<body>
+    <script>
+        //        디바이스 정보를 얻어서 소문자로 모두 변경
+        let info = navigator.userAgent.toLocaleLowerCase();
+        console.log(info);
+        let osTxt = null; // 이미지 변수 초기화
+
+        // 문자를 비교해서 운영체제 확인
+        if(info.indexOf('windows') >= 0) {
+            osTxt = "윈도우";
+        } else if (info.indexOf('macintosh') >= 0) {
+            osTxt = "맥";
+        } else if (info.indexOf('iphone') >= 0) {
+            osTxt = "아이폰";
+        } else if (info.indexOf('android') >= 0){
+            osTxt = "안드로이드" ;
+        } else {
+            osTxt = "불명" ;
+        }
+        document.write(`<br>운영체제 : ${osTxt}`);
+
+        //모니터 정보
+        let sc_w = screen.width;
+        let sc_h = screen.height;
+
+        document.write(`<br> 모니터 해상도 : 너비=${sc_w}px, 높이 = ${sc_h}px`);
+    </script>
+</body>
+</html>
